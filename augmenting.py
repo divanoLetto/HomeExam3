@@ -61,7 +61,6 @@ def super_augmentation(train_images, labels):
         label = labels[i]
 
         reorder_image = deshuffler(image, label)
-
         perms = list(permutations(range(0, 4)))
 
         for perm in perms:

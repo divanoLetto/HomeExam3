@@ -1,4 +1,4 @@
-import random
+import argparse
 from torchvision.models import vgg11_bn, vgg16
 from Utils import rescale, toTensor, my_plot, quarter_accuracy
 from augmenting import basic_augmentation, analize_dataset, super_augmentation, shuffle_dataset
@@ -10,7 +10,7 @@ from sklearn.preprocessing import LabelBinarizer
 from torchvision.transforms import transforms
 import numpy as np
 from sklearn.metrics import accuracy_score
-from torch.nn.functional import one_hot
+from utils import settings_parser
 
 
 def get_dataset(images, labels, lb, transformation):
@@ -135,22 +135,35 @@ def evaluate(model, dataloader, lb, args):
 
 if __name__ == "__main__":
     # settings
+    parser = argparse.ArgumentParser()
+    # Get settings
+    settings_system = settings_parser.get_settings('System')
+    settings_dataset = settings_parser.get_settings('Dataset')
+    settings_model = settings_parser.get_settings('Model')
+
+    print_freq = int(settings_system['print_freq'])
+    save_freq = int(settings_system['save_freq'])
+
+    split_train_val = float(settings_dataset['split_train_val'])
+    weights_save_path = settings_dataset['weights_save_path']
+    weights_load_path = settings_dataset['weights_load_path']
+    dataset_path = settings_dataset['dataset_path']
+
+    num_epochs = int(settings_model['num_epochs'])
+    batch_size = int(settings_model['batch_size'])
+    if settings_model['train'] == "True":
+        train = True
+    else:
+        train = False
+
     num_classes = 24  # 24 = 4!
-    num_epochs = 8
-    batch_size = 128
-    print_freq = 10
-    save_freq = 20
-    split_train_val = 0.8
-    train = False
-    weights_save_path = 'model/weights.pth'
-    weights_load_path = 'model/weights.pth'
 
     # Load Dataset
-    train_images, train_labels, test_images, test_labels = load_data("DataShuffled.npz")
-
+    train_images, train_labels, test_images, test_labels = load_data(dataset_path)
+    # One hot label encoder
     lb = LabelBinarizer()
     lb.fit([str(s) for s in test_labels.tolist()] + [str(s) for s in train_labels.tolist()])
-
+    # define image processing
     normalize = transforms.Normalize(
         mean=[0.485, 0.456, 0.406],
         std=[0.229, 0.224, 0.225]
@@ -160,10 +173,9 @@ if __name__ == "__main__":
         transforms.Lambda(rescale),
         normalize,
     ])
-
-    # Crate a Model
+    # Create a Model
     model = vgg11_bn(pretrained=True)
-    model.classifier[6] = torch.nn.Linear(4096, 24)
+    model.classifier[6] = torch.nn.Linear(4096, num_classes)
     print("Model")
     print(model)
 
@@ -183,9 +195,9 @@ if __name__ == "__main__":
         train_labels = train_labels[0:dim_train]
         # Augment dataset
         train_images, train_labels = super_augmentation(train_images, train_labels)
-        # train_images, train_labels = shuffle_dataset(train_images, train_labels)
-        print("Train set dim: ", train_images.shape[0], " test set dim: ", valid_images.shape[0])
 
+        print("Train set dim: ", train_images.shape[0], " test set dim: ", valid_images.shape[0])
+        # Get train and validation datasets
         train_dataset = get_dataset(images=train_images, labels=train_labels, lb=lb, transformation=transff)
         val_dataset = get_dataset(images=valid_images, labels=valid_labels, lb=lb, transformation=transff)
 

@@ -1,3 +1,4 @@
+import argparse
 from sklearn.neighbors import KNeighborsClassifier
 from torchvision import transforms
 from torchvision.models import vgg11_bn
@@ -6,6 +7,8 @@ from load_data import load_data
 import torch
 from sklearn.metrics import accuracy_score
 import numpy as np
+
+from utils import settings_parser
 
 
 def NeighborsClassifier_from_model(model, p_train_images, train_labels, p_test_images, test_labels):
@@ -39,13 +42,19 @@ def NeighborsClassifier_from_model(model, p_train_images, train_labels, p_test_i
 
 if __name__ == "__main__":
     # settings
+    parser = argparse.ArgumentParser()
+    # Get settings
+    dataset_system = settings_parser.get_settings('Dataset')
+
+    # settings
     num_classes = 24  # 24 = 4!
     batch_size = 32
 
-    weights_load_path = 'model/weights.pth'
+    weights_load_path = dataset_system['weights_load_path']
+    dataset_path = dataset_system['dataset2_path']
 
     # Load Dataset
-    train_images, train_labels, test_images, test_labels = load_data("DataNormal.npz")
+    train_images, train_labels, test_images, test_labels = load_data(dataset_path)
     num_train_samples = train_images.shape[0]
     num_test_samples = test_images.shape[0]
 
