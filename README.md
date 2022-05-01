@@ -13,7 +13,7 @@ A nerural network has been created which, given the shuffled images, learns to r
 
 Class image            |  Model Class Visualization   |  MCV with Gaussian Kernel
 :-------------------------:|:-------------------------:|:---------------------------------:
-Green snake, Grass snake  |  ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/0.png)  |  ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/0.png)
+![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/0.png) | ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/0.png)  |  ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/0.png)
 
 
 Class A | B  | C |  C |  C |  C |  C |  C 
