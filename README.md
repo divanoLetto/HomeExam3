@@ -15,6 +15,6 @@ A nerural network has been created which, given the shuffled images, learns to r
 ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/0.png) | ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/0.png)  |  ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/0.png)
 
 
-Class A |  | C |  C |  C |  C |  C |  C 
+Class A | A  | C |  C |  C |  C |  C |  C 
 ----------:|:---------------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/0.png)  |  ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/1.png)  |  ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/2.png) |  ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/3.png) |  ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/4.png) |  ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/5.png) |  ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/6.png) |  ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/7.png)
