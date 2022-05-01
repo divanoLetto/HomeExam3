@@ -9,7 +9,8 @@
 ## Introduction
 
 In this problem we solve the Jigsaw Puzzles problem of ordering shuffled patches of an image. <br/>
-A nerural network has been created which, given the shuffled images, learns to recognize the permutation and allows to restore the initial image.
+A nerural network has been created modifying a VGG11 which, given the shuffled images, learns to recognize the permutation and allows to restore the initial image. The problem so has been considered as a classification problem in which it is necessary to distinguish in which of the possible permutations the image has been perturbed. <br\> 
+To be able to reach a high level of accuracy starting from the data set provided, an initialization phase of the weights and a phase of data augmentation were carried out.
 
 1 | 2 | 3 | 4 | 5 | 6 | 7| 8
 :-------------------------:|:-------------------------:|:---------------------------------:|:---------------------------------:|:---------------------------------:|:---------------------------------:|:---------------------------------:|:---------------------------------:
