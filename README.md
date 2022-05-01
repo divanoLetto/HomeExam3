@@ -3,7 +3,7 @@
 #### Università degli Studi di Firenze | UiT The Arctic University of Norway 
 
 ---
-![](https://img.shields.io/github/contributors/divanoletto/Explicability-of-decisions-and-uncertainty-in-Deep-Learning?color=light%20green) ![](https://img.shields.io/github/repo-size/divanoletto/Explicability-of-decisions-and-uncertainty-in-Deep-Learning)
+![](https://img.shields.io/github/contributors/divanoletto/Jigsaw_puzzles-Deep_Learning?color=light%20green) ![](https://img.shields.io/github/repo-size/divanoletto/Jigsaw_puzzles-Deep_Learning)
 ---
 
 ## Introduction
