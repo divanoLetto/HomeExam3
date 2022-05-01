@@ -11,7 +11,7 @@
 In this problem we solve the Jigsaw Puzzles problem of ordering shuffled patches of an image. <br/>
 A nerural network has been created which, given the shuffled images, learns to recognize the permutation and allows to restore the initial image.
 
-Class A | A | C 
+Class A |  | C 
 :-------------------------:|:-------------------------:|:---------------------------------:
 ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/0.png) | ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/0.png)  |  ![](https://github.com/divanoLetto/Jigsaw_puzzles-Deep_Learning/blob/main/images/0.png)
 
