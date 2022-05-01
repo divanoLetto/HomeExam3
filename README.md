@@ -26,4 +26,9 @@ In order to use run the code run the following istruction:
 $ python 3_b.py 
 ```
 
-In *settings/config.cfg* is possible to change the project settings as batch size and dataset path.
+The file *settings/config.cfg* contains the project settings as batch size and dataset path.
+The following code allows to test the trained network against a never seen dataset by a fine-tuning operations into 9 classes. 
+
+```
+$ python 3_c.py 
+```
