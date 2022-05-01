@@ -18,7 +18,7 @@ A nerural network has been created modifying a VGG11 which, given the shuffled i
 To be able to reach a high level of accuracy starting from the data set provided, an initialization phase of the weights and a phase of data augmentation were carried out.<br\>
 Read Report/report.pdf for all the details.
 
-# Usage
+## Usage
 
 In order to use run the code run the following istruction:
 
